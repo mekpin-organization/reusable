@@ -1,0 +1,21 @@
+name: test reusable
+
+on:
+  workflow_call:
+    inputs:
+      service_name:
+        description: 'Name of service/web app'
+        required: false
+        type: string
+
+env:
+  SERVICE_NAME: ${{ inputs.service_name || github.event.repository.name  }}
+  MANGGILE: ${{ secrets.MANGGIL }}
+
+jobs:
+  fetch-prop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set output repourl
+        id: vars
+        run: echo "$MANGGILE"
