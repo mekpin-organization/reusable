@@ -7,10 +7,12 @@ on:
         description: 'Name of service/web app'
         required: false
         type: string
-
+    secrets:
+      mang:
+        required: true
 env:
   SERVICE_NAME: ${{ inputs.service_name || github.event.repository.name  }}
-  MANGGILE: ${{ secrets.MANGGIL }}
+  MANGGILE: ${{ secrets.mang }}
 
 jobs:
   fetch-prop:
