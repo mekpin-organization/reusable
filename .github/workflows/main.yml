@@ -15,7 +15,7 @@ env:
   MANGGILE: ${{ secrets.mang }}
 
 jobs:
-  fetch-prop:
+  org-secret-call:
     runs-on: ubuntu-latest
     steps:
       - name: Set output repourl
